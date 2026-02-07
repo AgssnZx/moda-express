@@ -39,7 +39,7 @@ const areaPix = document.getElementById("areaPix");
 // CONFIGURAÇÃO PIX
 // =====================
 const CHAVE_PIX = "gustavonunes4533@gmail.com";
-const NOME_RECEBEDOR = "ANGELO GUSTAVO DOS SANTOS";
+const NOME_RECEBEDOR = "ANGELO GUSTAVO DOS SANTOS SANTANA NUNES";
 const CIDADE_RECEBEDOR = "ARACAJU";
 
 // =====================
@@ -337,7 +337,7 @@ const produtos = [
   { id: 42, nome: "Tênis Premium", preco: 299.9, categoria: "sapato", img: "images/tenis-premium.png" },
   { id: 43, nome: "Tênis Casual", preco: 209.9, categoria: "sapato", img: "images/tenis-casual.png" },
   { id: 44, nome: "Tênis Esportivo", preco: 239.9, categoria: "sapato", img: "images/tenis-esportivo.png" },
-  { id: 45, nome: "Bota Coturno", preco: 279.9, categoria: "sapato", img: "images/bota-coturno.png" },
+  { id: 45, nome: "Tênis Basico", preco: 279.9, categoria: "sapato", img: "images/tenis-basico.png" },
   { id: 46, nome: "Tênis Fashion", preco: 259.9, categoria: "sapato", img: "images/tenis-fashion.png" },
   { id: 47, nome: "Tênis Minimal", preco: 219.9, categoria: "sapato", img: "images/tenis-minimal.png" },
   { id: 48, nome: "Sapatênis", preco: 189.9, categoria: "sapato", img: "images/sapatenis.png" },
