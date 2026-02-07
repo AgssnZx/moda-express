@@ -1,0 +1,478 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.topo {
+  background: #000;
+  border-bottom: 3px solid #ffcc00;
+}
+
+.topo-linha {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.logo-area span {
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.categorias-topo {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.categorias-topo button {
+  background: transparent;
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  padding: 6px 4px;
+  transition: color 0.3s;
+}
+
+.categorias-topo button:hover {
+  color: #ffcc00;
+}
+
+.categorias-topo button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #ff0080, #ffcc00);
+  transition: 0.3s;
+}
+
+.categorias-topo button:hover::after {
+  width: 100%;
+}
+
+.acoes-topo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Estilo do botão Google com foto do usuário */
+.btn-google {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.btn-google:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.icon-google {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.btn-carrinho {
+  background: linear-gradient(135deg, #ff0080, #ffcc00);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-carrinho:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 204, 0, 0.4);
+}
+
+.inicio-area {
+  padding: 60px 30px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.inicio-area h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
+  color: #ffcc00;
+}
+
+.inicio-area p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 16px;
+}
+
+.inicio-area ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.inicio-area li {
+  font-size: 17px;
+  color: #ccc;
+  margin-bottom: 8px;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  padding: 30px;
+}
+
+.produto {
+  background: #111;
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 35px rgba(255, 204, 0, 0.2);
+}
+
+.img-produto {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+}
+
+.produto h3 {
+  font-size: 16px;
+  margin: 6px 0 0;
+  color: #fff;
+}
+
+.produto p {
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.produto button {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #ff0080, #ffcc00);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.produto button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: #111;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  border: 2px solid #222;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h3 {
+  color: #ffcc00;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#listaCarrinho {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: #0a0a0a;
+  padding: 10px;
+}
+
+#listaCarrinho::-webkit-scrollbar {
+  width: 6px;
+}
+
+#listaCarrinho::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 3px;
+}
+
+#listaCarrinho::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border-radius: 3px;
+}
+
+#listaCarrinho li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  font-size: 14px;
+  background: #1a1a1a;
+  border-radius: 6px;
+}
+
+#listaCarrinho li button {
+  background: #ef4444;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+#listaCarrinho li button:hover {
+  background: #dc2626;
+}
+
+/* Área do QR Code PIX */
+#areaPix {
+  text-align: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: #0a0a0a;
+  border-radius: 12px;
+  border: 2px solid #222;
+}
+
+#areaPix h3 {
+  color: #28a745;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+#areaPix p {
+  color: #ccc;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+#qrcode {
+  margin: 20px auto;
+  display: inline-block;
+  padding: 15px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#qrcode img {
+  display: block;
+}
+
+#pixTexto {
+  width: 100%;
+  height: 120px;
+  margin-top: 15px;
+  padding: 12px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  background: #1a1a1a;
+  color: #fff;
+  border: 2px solid #333;
+  border-radius: 8px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+#pixTexto:focus {
+  outline: none;
+  border-color: #ffcc00;
+}
+
+/* Botões do Modal */
+.btn-finalizar {
+  width: 100%;
+  background: linear-gradient(135deg, #00ff99, #00cc66);
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-finalizar:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-finalizar:disabled {
+  background: #444;
+  color: #888;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-fechar {
+  width: 100%;
+  background: #ef4444;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  margin-top: 10px;
+}
+
+.btn-fechar:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  background: #dc2626;
+}
+
+/* Botão Copiar PIX dentro da areaPix */
+#areaPix button {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#areaPix button:hover {
+  background: #218838;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .topo-linha {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .categorias-topo {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .acoes-topo {
+    justify-content: center;
+  }
+
+  .btn-google {
+    max-width: 150px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .grid-produtos {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .inicio-area h2 {
+    font-size: 28px;
+  }
+
+  .inicio-area p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-google {
+    font-size: 11px;
+  }
+}

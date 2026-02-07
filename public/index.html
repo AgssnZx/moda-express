@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moda Express</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-linha">
+    <div class="logo-area">
+      <img src="images/logo.png" class="logo" alt="Logo Moda Express">
+      <span>Moda Express</span>
+    </div>
+
+    <nav class="categorias-topo">
+      <button onclick="filtrar('todos')">Início</button>
+      <button onclick="filtrar('sapato')">Sapatos</button>
+      <button onclick="filtrar('calca')">Calças</button>
+      <button onclick="filtrar('moletom')">Moletons</button>
+      <button onclick="filtrar('camisa')">Camisas</button>
+    </nav>
+
+    <div class="acoes-topo">
+      <button id="btnLogin" class="btn-google">
+        <img src="images/google_small.png" class="icon-google" alt="Google">
+        Entrar
+      </button>
+      <button id="btnCarrinho" class="btn-carrinho">
+        🛒 Carrinho (<span id="qtdCarrinho">0</span>)
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="inicio" class="inicio-area">
+    <h2>Bem-vindo à Moda Express</h2>
+
+    <p>
+      A Moda Express nasceu com um único propósito: levar estilo, conforto e
+      identidade para quem quer se expressar através da roupa.
+    </p>
+
+    <p>
+      Não vendemos apenas roupas. Vendemos presença, personalidade e confiança.
+      Cada peça acompanha você em todos os momentos da sua vida.
+    </p>
+
+    <ul>
+      <li><strong>Sapatos</strong> – conforto e impacto em cada passo.</li>
+      <li><strong>Calças</strong> – estilo urbano com caimento perfeito.</li>
+      <li><strong>Moletons</strong> – proteção, presença e atitude.</li>
+      <li><strong>Camisas</strong> – identidade em cada detalhe.</li>
+    </ul>
+
+    <p>
+      Explore as categorias no topo da página e descubra sua próxima peça favorita.
+    </p>
+  </section>
+
+  <section id="produtos" class="grid-produtos" style="display:none;"></section>
+</main>
+
+<!-- Modal do Carrinho -->
+<div id="modalCarrinho" class="modal">
+  <div class="modal-content">
+    <h3>🛒 Seu Carrinho</h3>
+
+    <ul id="listaCarrinho"></ul>
+    <p style="font-size: 18px; font-weight: bold; margin: 15px 0;">
+      Total: R$ <span id="totalCarrinho">0.00</span>
+    </p>
+
+    <div id="areaPix" style="text-align: center; margin: 20px 0;"></div>
+
+    <div style="display: flex; gap: 10px; margin-top: 20px;">
+      <button id="finalizar" class="btn-finalizar">Finalizar Pedido</button>
+      <button id="fecharModal" class="btn-fechar">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<!-- QR Code Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<!-- App Script -->
+<script src="js/app.js"></script>
+</body>
+</html>
